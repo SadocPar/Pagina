@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Estilos CSS (puedes personalizarlos) */
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos para el enlace con el ícono */
+        /*.registration-link {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }*/
+
+        /*.registration-link a {
+            text-decoration: none;
+            color: #fff;
+        }*/
+        
+        /* Menú de Navegación */
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        /* Botón de Registro*/
+        #registerBtn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        /*#registerBtn:hover {
+            background-color: #0056b3;
+        }*/
+
+        /* Sección de Inicio con categorías visuales */
+        #categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .category-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para el contenido de la categoría */
+        .category-content {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Consultorio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registration-section">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 style="color: #000000;">Programación De Citas</h1>
+
+        <!-- Programación de Citas -->
+        <p>Seleccione un servicio:</p>
+        <select id="servicioSelect" class="form-select mb-3">
+            <option value="nutricion">Nutrición</option>
+            <option value="fisioterapia">Fisioterapia</option>
+            <option value="medicina">Medicina</option>
+        </select>
+        <button id="programarCitaBtn" class="btn btn-primary">Programar Cita</button>
+
+        <!-- Categorías de Servicios con Imágenes -->
+        <h2>Categorías de Servicios</h2>
+        <div id="categories" class="row">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="nutrition-icon.png" alt="Nutrición">
+                    <h3>Nutrición</h3>
+                    <div class="category-content">
+                        <p>Ofrecemos servicios de nutrición para mantener un estilo de vida saludable.</p>
+                        <p>La nutrición es esencial para mantener un estilo de vida saludable. Nuestros servicios de nutrición están diseñados para ayudarte a alcanzar tus objetivos de salud y bienestar. Ofrecemos lo siguiente:</p>
+                        <ul>
+                            <li>Evaluación nutricional completa.</li>
+                            <li>Planificación de dietas personalizadas.</li>
+                            <li>Seguimiento quincenal para ajustar el plan según tus necesidades.</li>
+                            <li>Historial clínico para rastrear tu progreso.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="physiotherapy-icon.png" alt="Fisioterapia">
+                    <h3>Fisioterapia</h3>
+                    <div class="category-content">
+                        <p>Recupera tu salud física con nuestros servicios de fisioterapia especializados.</p>
+                        <p>Nuestros servicios de fisioterapia están diseñados para mejorar tu salud física y bienestar. Incluyen lo siguiente:</p>
+                        <ul>
+                            <li>Sesiones de fisioterapia diarias.</li>
+                            <li>Atención especializada en áreas como estética, gravitación, traumatología y cardiología.</li>
+                            <li>Un máximo de 10 sesiones por tratamiento.</li>
+                            <li>Información detallada compartida entre el terapeuta y el paciente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="medicine-icon.png" alt="Medicina">
+                    <h3>Medicina</h3>
+                    <div class="category-content">
+                        <p>Consultas generales y especializadas para tu bienestar.</p>
+                        <p>Nuestros servicios de medicina incluyen dos áreas principales:</p>
+                        <ul>
+                            <li>Medicina General: Ofrecemos consultas para problemas de salud generales, diagnóstico y tratamiento.</li>
+                            <li>Medicina Traumatológica: Especializada en lesiones, traumatismos y afecciones ortopédicas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historiales Clínicos -->
+        <h2>Historiales Clínicos</h2>
+        <div id="historialClinico" class="mt-3">
+            <!-- Aquí se mostrarán los historiales clínicos según el servicio seleccionado -->
+        </div>
+    </div>
+
+<!-- Apartado de Registro de Usuarios-->
+<div id="registration-section" class="container mt-5">
+    <h2>Registro de Usuarios</h2>
+    Formulario de Registro y Validación
+    <form id="registrationForm">
+        Campos del formulario
+    </form>
+</div>
+
+
+<!-- Enlace al Apartado de Registro con Ícono-->
+<div class="registration-link">
+    <a href="#registration-section">
+        <img src="register-icon.png" alt="Registro">
+    </a>
+</div>
+
+
+    <!-- Enlace a Bootstrap JS (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Programación de Citas
+        const servicioSelect = document.getElementById('servicioSelect');
+        const programarCitaBtn = document.getElementById('programarCitaBtn');
+        
+        programarCitaBtn.addEventListener('click', () => {
+            const selectedService = servicioSelect.value;
+            alert(`Has seleccionado programar una cita para el servicio de ${selectedService}.`);
+        });
+
+        // Historiales Clínicos
+        servicioSelect.addEventListener('change', () => {
+            const selectedService = servicioSelect.value;
+            const historialClinico = document.getElementById('historialClinico');
+
+            // Simulación de historiales clínicos según el servicio seleccionado
+            let historialHTML = '';
+            if (selectedService === 'nutricion') {
+                historialHTML = '<p>Historial clínico de nutrición...</p>';
+            } else if (selectedService === 'fisioterapia') {
+                historialHTML = '<p>Historial clínico de fisioterapia...</p>';
+            } else if (selectedService === 'medicina') {
+                historialHTML = '<p>Historial clínico de medicina...</p>';
+            }
+
+            historialClinico.innerHTML = historialHTML;
+        });
+    </script>
+</body>
+</html>
+
+
